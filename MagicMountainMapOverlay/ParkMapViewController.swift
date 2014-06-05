@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ParkMapViewController.swift
 //  MagicMountainMapOverlay
 //
 //  Created by user on 6/4/14.
@@ -8,26 +8,44 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-                            
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+class ParkMapViewController: UIViewController
+{
+
+//    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
+//    {
+//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+//        // Custom initialization
+//    }
+    
+    
+    init(coder aDecoder: NSCoder!)
+    {
+        super.init(coder: aDecoder)
     }
 
-    override func didReceiveMemoryWarning() {
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+
     
+    // #pragma mark - Navigation
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?)
     {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }
-
+    
 
 }
-

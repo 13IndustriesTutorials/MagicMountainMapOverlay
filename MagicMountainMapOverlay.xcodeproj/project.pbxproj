@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE065F98193FFE6B00BDE7E7 /* MapOptiionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE065F97193FFE6B00BDE7E7 /* MapOptiionsViewController.swift */; };
+		CEB88B8A193FFE0100187E64 /* ParkMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB88B89193FFE0100187E64 /* ParkMapViewController.swift */; };
 		CEEED2CB193FFB2E00795580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED2CA193FFB2E00795580 /* AppDelegate.swift */; };
 		CEEED2CD193FFB2E00795580 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED2CC193FFB2E00795580 /* ViewController.swift */; };
 		CEEED2D0193FFB2E00795580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEED2CE193FFB2E00795580 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE065F97193FFE6B00BDE7E7 /* MapOptiionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapOptiionsViewController.swift; sourceTree = "<group>"; };
+		CEB88B89193FFE0100187E64 /* ParkMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkMapViewController.swift; sourceTree = "<group>"; };
 		CEEED2C5193FFB2E00795580 /* MagicMountainMapOverlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicMountainMapOverlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEED2C9193FFB2E00795580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEEED2CA193FFB2E00795580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 				CEEED2CA193FFB2E00795580 /* AppDelegate.swift */,
 				CEEED2CC193FFB2E00795580 /* ViewController.swift */,
 				CEEED2CE193FFB2E00795580 /* Main.storyboard */,
+				CE065F97193FFE6B00BDE7E7 /* MapOptiionsViewController.swift */,
+				CEB88B89193FFE0100187E64 /* ParkMapViewController.swift */,
 				CEEED2D1193FFB2E00795580 /* Images.xcassets */,
 				CEEED2C8193FFB2E00795580 /* Supporting Files */,
 			);
@@ -208,8 +214,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB88B8A193FFE0100187E64 /* ParkMapViewController.swift in Sources */,
 				CEEED2CD193FFB2E00795580 /* ViewController.swift in Sources */,
 				CEEED2CB193FFB2E00795580 /* AppDelegate.swift in Sources */,
+				CE065F98193FFE6B00BDE7E7 /* MapOptiionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +405,7 @@
 				CEEED2E3193FFB2E00795580 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEEED2E4193FFB2E00795580 /* Build configuration list for PBXNativeTarget "MagicMountainMapOverlayTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +414,7 @@
 				CEEED2E6193FFB2E00795580 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
