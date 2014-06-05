@@ -10,6 +10,7 @@ import UIKit
 
 class MapOptionsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
+    var selectedOptions = String[]()
 
     var data = ["Park Boundary", "Map Overlay", "Attractiopn Pins", "Character Location", "Route" ]
 
@@ -49,8 +50,11 @@ class MapOptionsViewController: UIViewController, UITableViewDelegate, UITableVi
         cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
     {
         var reuseIdentifier = "OptionCell"
+        
+        //dequeue a new cell for use in the table view
         var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as UITableViewCell
         
+        //set the cell text
         cell.textLabel.text = data[indexPath.row]
         return cell as UITableViewCell
     }
@@ -60,6 +64,47 @@ class MapOptionsViewController: UIViewController, UITableViewDelegate, UITableVi
     {
         return self.data.count;
     }
+    
+    func tableView(tableView: UITableView!,
+        didSelectRowAtIndexPath indexPath: NSIndexPath!)
+    {
+        //get the cell by index path
+        var cell = tableView.cellForRowAtIndexPath(indexPath)
+        
+        
+        if cell.accessoryType == UITableViewCellAccessoryType.None
+        {
+            //add a checkmark
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            selectedOptions.append(cell.textLabel.text)
+            //println("index path \(indexPath.row) count after add \(selectedOptions.count)")
+            
+        }
+        else if cell.accessoryType == UITableViewCellAccessoryType.Checkmark
+        {
+            cell.accessoryType = UITableViewCellAccessoryType.None
+            selectedOptions.removeAtIndex(self.findIndex(cell.textLabel.text))
+            //println("count after removal \(selectedOptions.count)")
+        }
+        
+    }
+    
+    //find the array index of the item selected
+    func findIndex(value:String)->Int
+    {
+        var arrayIndex = 0
+        
+        for var index = 0; index < selectedOptions.count; ++index
+        {
+            if selectedOptions[index] == value
+            {
+                arrayIndex = index
+            }
+        }
+        
+        return arrayIndex
+    }
+    
     
     @IBAction func onDoneButtonPressed(sender : AnyObject)
     {
