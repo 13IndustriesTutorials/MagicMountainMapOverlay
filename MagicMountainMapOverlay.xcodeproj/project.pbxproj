@@ -10,7 +10,6 @@
 		CE065F98193FFE6B00BDE7E7 /* MapOptiionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE065F97193FFE6B00BDE7E7 /* MapOptiionsViewController.swift */; };
 		CEB88B8A193FFE0100187E64 /* ParkMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB88B89193FFE0100187E64 /* ParkMapViewController.swift */; };
 		CEEED2CB193FFB2E00795580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED2CA193FFB2E00795580 /* AppDelegate.swift */; };
-		CEEED2CD193FFB2E00795580 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED2CC193FFB2E00795580 /* ViewController.swift */; };
 		CEEED2D0193FFB2E00795580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEED2CE193FFB2E00795580 /* Main.storyboard */; };
 		CEEED2D2193FFB2E00795580 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEED2D1193FFB2E00795580 /* Images.xcassets */; };
 		CEEED2DE193FFB2E00795580 /* MagicMountainMapOverlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED2DD193FFB2E00795580 /* MagicMountainMapOverlayTests.swift */; };
@@ -32,7 +31,6 @@
 		CEEED2C5193FFB2E00795580 /* MagicMountainMapOverlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicMountainMapOverlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEED2C9193FFB2E00795580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEEED2CA193FFB2E00795580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CEEED2CC193FFB2E00795580 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CEEED2CF193FFB2E00795580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEEED2D1193FFB2E00795580 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CEEED2D7193FFB2E00795580 /* MagicMountainMapOverlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagicMountainMapOverlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				CEEED2CA193FFB2E00795580 /* AppDelegate.swift */,
-				CEEED2CC193FFB2E00795580 /* ViewController.swift */,
 				CEEED2CE193FFB2E00795580 /* Main.storyboard */,
 				CE065F97193FFE6B00BDE7E7 /* MapOptiionsViewController.swift */,
 				CEB88B89193FFE0100187E64 /* ParkMapViewController.swift */,
@@ -215,7 +212,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEB88B8A193FFE0100187E64 /* ParkMapViewController.swift in Sources */,
-				CEEED2CD193FFB2E00795580 /* ViewController.swift in Sources */,
 				CEEED2CB193FFB2E00795580 /* AppDelegate.swift in Sources */,
 				CE065F98193FFE6B00BDE7E7 /* MapOptiionsViewController.swift in Sources */,
 			);

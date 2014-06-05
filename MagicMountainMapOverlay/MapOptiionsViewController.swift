@@ -69,6 +69,7 @@ class MapOptionsViewController: UIViewController, UITableViewDelegate, UITableVi
             //add a checkmark
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
             selectedOptions.append(cell.textLabel.text)
+            
             //println("index path \(indexPath.row) count after add \(selectedOptions.count)")
             
         }

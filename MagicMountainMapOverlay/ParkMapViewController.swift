@@ -13,6 +13,8 @@ class ParkMapViewController: UIViewController
 
     var selectedOptions = String[]()
     
+    
+    
     init(coder aDecoder: NSCoder!)
     {
         super.init(coder: aDecoder)
@@ -35,9 +37,9 @@ class ParkMapViewController: UIViewController
         viewController.selectedOptions = self.selectedOptions
     }
     
-    @IBAction func unwindFromOptions(segue: UIStoryboardSegue?)
+    @IBAction func unwindFromOptions(segue: UIStoryboardSegue)
     {
-        var viewController = segue?.sourceViewController as MapOptionsViewController
+        var viewController = segue.sourceViewController as MapOptionsViewController
         viewController.selectedOptions = self.selectedOptions
     }
 
