@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CE065F98193FFE6B00BDE7E7 /* MapOptiionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE065F97193FFE6B00BDE7E7 /* MapOptiionsViewController.swift */; };
+		CE1447B41940480C00D3E175 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1447B31940480C00D3E175 /* MapKit.framework */; };
+		CE1447B619404B3D00D3E175 /* MagicMountain.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE1447B519404B3D00D3E175 /* MagicMountain.plist */; };
+		CE1447B819404B4600D3E175 /* MagicMountainAttractions.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE1447B719404B4600D3E175 /* MagicMountainAttractions.plist */; };
 		CEB88B8A193FFE0100187E64 /* ParkMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB88B89193FFE0100187E64 /* ParkMapViewController.swift */; };
 		CEEED2CB193FFB2E00795580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED2CA193FFB2E00795580 /* AppDelegate.swift */; };
 		CEEED2D0193FFB2E00795580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEED2CE193FFB2E00795580 /* Main.storyboard */; };
@@ -27,6 +30,9 @@
 
 /* Begin PBXFileReference section */
 		CE065F97193FFE6B00BDE7E7 /* MapOptiionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapOptiionsViewController.swift; sourceTree = "<group>"; };
+		CE1447B31940480C00D3E175 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CE1447B519404B3D00D3E175 /* MagicMountain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MagicMountain.plist; sourceTree = "<group>"; };
+		CE1447B719404B4600D3E175 /* MagicMountainAttractions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MagicMountainAttractions.plist; sourceTree = "<group>"; };
 		CEB88B89193FFE0100187E64 /* ParkMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkMapViewController.swift; sourceTree = "<group>"; };
 		CEEED2C5193FFB2E00795580 /* MagicMountainMapOverlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicMountainMapOverlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEED2C9193FFB2E00795580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1447B41940480C00D3E175 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +66,7 @@
 		CEEED2BC193FFB2E00795580 = {
 			isa = PBXGroup;
 			children = (
+				CE1447B31940480C00D3E175 /* MapKit.framework */,
 				CEEED2C7193FFB2E00795580 /* MagicMountainMapOverlay */,
 				CEEED2DA193FFB2E00795580 /* MagicMountainMapOverlayTests */,
 				CEEED2C6193FFB2E00795580 /* Products */,
@@ -90,6 +98,8 @@
 		CEEED2C8193FFB2E00795580 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CE1447B719404B4600D3E175 /* MagicMountainAttractions.plist */,
+				CE1447B519404B3D00D3E175 /* MagicMountain.plist */,
 				CEEED2C9193FFB2E00795580 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -192,8 +202,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1447B819404B4600D3E175 /* MagicMountainAttractions.plist in Resources */,
 				CEEED2D0193FFB2E00795580 /* Main.storyboard in Resources */,
 				CEEED2D2193FFB2E00795580 /* Images.xcassets in Resources */,
+				CE1447B619404B3D00D3E175 /* MagicMountain.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

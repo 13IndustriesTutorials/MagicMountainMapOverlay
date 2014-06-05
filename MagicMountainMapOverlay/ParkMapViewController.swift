@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import MapKit
 
-class ParkMapViewController: UIViewController
+class ParkMapViewController: UIViewController,MKMapViewDelegate
 {
 
     var selectedOptions = String[]()
     
-    
+    @IBOutlet var mapView : MKMapView
     
     init(coder aDecoder: NSCoder!)
     {
@@ -42,5 +43,9 @@ class ParkMapViewController: UIViewController
         var viewController = segue.sourceViewController as MapOptionsViewController
         viewController.selectedOptions = self.selectedOptions
     }
+    
+    @IBAction func onMapViewChanged(sender : UISegmentedControl) {
+    }
+    
 
 }
