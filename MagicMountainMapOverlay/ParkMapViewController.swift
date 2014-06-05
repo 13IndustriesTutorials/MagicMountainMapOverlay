@@ -11,12 +11,7 @@ import UIKit
 class ParkMapViewController: UIViewController
 {
 
-//    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
-//    {
-//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-//        // Custom initialization
-//    }
-    
+    var selectedOptions = String[]()
     
     init(coder aDecoder: NSCoder!)
     {
@@ -26,16 +21,7 @@ class ParkMapViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     
     // #pragma mark - Navigation
@@ -45,7 +31,14 @@ class ParkMapViewController: UIViewController
     {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        var viewController = segue?.destinationViewController as MapOptionsViewController
+        viewController.selectedOptions = self.selectedOptions
     }
     
+    @IBAction func unwindFromOptions(segue: UIStoryboardSegue?)
+    {
+        var viewController = segue?.sourceViewController as MapOptionsViewController
+        viewController.selectedOptions = self.selectedOptions
+    }
 
 }
