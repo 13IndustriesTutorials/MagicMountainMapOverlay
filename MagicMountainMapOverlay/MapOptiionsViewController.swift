@@ -76,26 +76,41 @@ class MapOptionsViewController: UIViewController, UITableViewDelegate, UITableVi
         else if cell.accessoryType == UITableViewCellAccessoryType.Checkmark
         {
             cell.accessoryType = UITableViewCellAccessoryType.None
-            selectedOptions.removeAtIndex(self.findIndex(cell.textLabel.text))
+            
+            //find index of item in array, if present remove
+            //use optional unbinding to test for nil and unwrap
+            if let index = self.findIndex(cell.textLabel.text)
+            {
+                selectedOptions.removeAtIndex(index)
+            }
             //println("count after removal \(selectedOptions.count)")
         }
         
     }
     
-    //find the array index of the item selected
-    func findIndex(value:String)->Int
+    //find the array index of the item selected using optionals
+    func findIndex(option:String)->Int?
     {
-        var arrayIndex = 0
-        
-        for var index = 0; index < selectedOptions.count; ++index
+        //enumerate array using tuple to find value and index
+        for(index, value) in enumerate(selectedOptions)
         {
-            if selectedOptions[index] == value
+            if value == option
             {
-                arrayIndex = index
+                return index
             }
         }
-        
-        return arrayIndex
+//        var arrayIndex = 0
+//        
+//        for var index = 0; index < selectedOptions.count; ++index
+//        {
+//            if selectedOptions[index] == value
+//            {
+//                arrayIndex = index
+//            }
+//        }
+//        
+//        return arrayIndex
+        return nil
     }
 
 }
