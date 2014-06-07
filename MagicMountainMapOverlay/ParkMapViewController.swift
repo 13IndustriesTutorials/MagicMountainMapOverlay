@@ -19,7 +19,7 @@ class ParkMapViewController: UIViewController,MKMapViewDelegate
     
     init(coder aDecoder: NSCoder!)
     {
-        self.park = Park(filename: "MagicMountain.plist")
+        self.park = Park(filename: "MagicMountain")
         super.init(coder: aDecoder)
     }
 
@@ -27,6 +27,7 @@ class ParkMapViewController: UIViewController,MKMapViewDelegate
     {
         super.viewDidLoad()
 
+        
         //determine the span of the latitude
         var latDelta = self.park.overlayTopLeftCoordinate.latitude - self.park.overlayBottomRightCoordinate.latitude
 
@@ -40,7 +41,12 @@ class ParkMapViewController: UIViewController,MKMapViewDelegate
         self.mapView.region = region
     }
 
-    
+    override func viewDidAppear(animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        
+        
+    }
     // #pragma mark - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
