@@ -13,6 +13,7 @@
 		CE1447B819404B4600D3E175 /* MagicMountainAttractions.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE1447B719404B4600D3E175 /* MagicMountainAttractions.plist */; };
 		CE5184611940E5CD00053558 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5184601940E5CD00053558 /* Park.swift */; };
 		CE531B5A1942C15B008EC7B1 /* ParkMapOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE531B591942C15B008EC7B1 /* ParkMapOverlay.swift */; };
+		CE531B5C1942C41E008EC7B1 /* ParkMapOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE531B5B1942C41E008EC7B1 /* ParkMapOverlayView.swift */; };
 		CEB88B8A193FFE0100187E64 /* ParkMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB88B89193FFE0100187E64 /* ParkMapViewController.swift */; };
 		CEEED2CB193FFB2E00795580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED2CA193FFB2E00795580 /* AppDelegate.swift */; };
 		CEEED2D0193FFB2E00795580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEED2CE193FFB2E00795580 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		CE1447B719404B4600D3E175 /* MagicMountainAttractions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MagicMountainAttractions.plist; sourceTree = "<group>"; };
 		CE5184601940E5CD00053558 /* Park.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
 		CE531B591942C15B008EC7B1 /* ParkMapOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkMapOverlay.swift; sourceTree = "<group>"; };
+		CE531B5B1942C41E008EC7B1 /* ParkMapOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkMapOverlayView.swift; sourceTree = "<group>"; };
 		CEB88B89193FFE0100187E64 /* ParkMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkMapViewController.swift; sourceTree = "<group>"; };
 		CEEED2C5193FFB2E00795580 /* MagicMountainMapOverlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicMountainMapOverlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEED2C9193FFB2E00795580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				CEB88B89193FFE0100187E64 /* ParkMapViewController.swift */,
 				CE5184601940E5CD00053558 /* Park.swift */,
 				CE531B591942C15B008EC7B1 /* ParkMapOverlay.swift */,
+				CE531B5B1942C41E008EC7B1 /* ParkMapOverlayView.swift */,
 				CEEED2D1193FFB2E00795580 /* Images.xcassets */,
 				CEEED2C8193FFB2E00795580 /* Supporting Files */,
 			);
@@ -233,6 +236,7 @@
 				CEEED2CB193FFB2E00795580 /* AppDelegate.swift in Sources */,
 				CE065F98193FFE6B00BDE7E7 /* MapOptiionsViewController.swift in Sources */,
 				CE531B5A1942C15B008EC7B1 /* ParkMapOverlay.swift in Sources */,
+				CE531B5C1942C41E008EC7B1 /* ParkMapOverlayView.swift in Sources */,
 				CE5184611940E5CD00053558 /* Park.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
