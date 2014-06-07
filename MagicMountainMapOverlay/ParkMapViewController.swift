@@ -58,6 +58,48 @@ class ParkMapViewController: UIViewController,MKMapViewDelegate
         viewController.selectedOptions = self.selectedOptions
     }
     
+    //create the overlay
+    func addOverlay()
+    {
+        let overlay = ParkMapOverlay(park: self.park)
+        self.mapView.addOverlay(overlay)
+    }
+    
+    
+    //
+    func loadSelectedOptions()
+    {
+        //remove all annotations and overlays to prevent duplications
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        self.mapView.removeOverlays(self.mapView.overlays)
+        
+        for (index, value)in enumerate(selectedOptions)
+        {
+            switch value
+            {
+            case "MapOverlay":
+                self.addOverlay()
+                
+            default:
+                break  //do nothing
+            }
+        }
+    }
+    
+    //delegate method to show the overlay
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer!
+    {
+        if overlay.isKindOfClass(ParkMapOverlay)
+        {
+            let magicMountainImage = UIImage(named: "overlay_park")
+            let overlayView = ParkMapOverlayView(overlay: overlay, overlayImage: magicMountainImage)
+            return overlayView
+        }
+        
+        return nil
+    }
+    
+    
     @IBAction func unwindFromOptions(segue: UIStoryboardSegue)
     {
         var viewController = segue.sourceViewController as MapOptionsViewController
