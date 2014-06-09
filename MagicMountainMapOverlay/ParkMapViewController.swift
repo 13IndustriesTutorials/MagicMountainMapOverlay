@@ -28,6 +28,8 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
     {
         super.viewDidLoad()
 
+        //set the delegate for the map view
+        self.mapView.delegate =  self
         
         //determine the span of the latitude
         var latDelta = self.park.overlayTopLeftCoordinate.latitude - self.park.overlayBottomRightCoordinate.latitude
@@ -65,7 +67,7 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
     //create the overlay
     func addOverlay()
     {
-        let overlay = ParkMapOverlay(park: self.park)
+        let overlay = ParkMapOverlay(park:self.park)
         self.mapView.addOverlay(overlay)
     }
     
@@ -83,7 +85,7 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
         {
             switch value
             {
-            case "MapOverlay":
+            case "Map Overlay":
                 self.addOverlay()
                 
             default:
