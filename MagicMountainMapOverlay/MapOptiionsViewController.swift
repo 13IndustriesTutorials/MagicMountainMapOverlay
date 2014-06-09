@@ -8,12 +8,19 @@
 
 import UIKit
 
-class MapOptionsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
+protocol MapOptionsDelegate
 {
+    func didSelectOptions(options: String[])
+}
+
+class MapOptionsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource 
+{
+    //declare instance variables
     var selectedOptions = String[]()
-
     var data = ["Park Boundary", "Map Overlay", "Attractiopn Pins", "Character Location", "Route" ]
-
+    
+    //declare the delegate for the options
+    var delegate:MapOptionsDelegate?
     
     init(coder aDecoder: NSCoder!)
     {
@@ -83,7 +90,6 @@ class MapOptionsViewController: UIViewController, UITableViewDelegate, UITableVi
             {
                 selectedOptions.removeAtIndex(index)
             }
-            //println("count after removal \(selectedOptions.count)")
         }
         
     }
@@ -99,18 +105,16 @@ class MapOptionsViewController: UIViewController, UITableViewDelegate, UITableVi
                 return index
             }
         }
-//        var arrayIndex = 0
-//        
-//        for var index = 0; index < selectedOptions.count; ++index
-//        {
-//            if selectedOptions[index] == value
-//            {
-//                arrayIndex = index
-//            }
-//        }
-//        
-//        return arrayIndex
         return nil
+    }
+    
+
+    @IBAction func onDoneButtonPressed(sender : UIBarButtonItem)
+    {
+        println("map options array \(self.selectedOptions)")
+        //call the delegate method and pass the options array
+        delegate?.didSelectOptions(self.selectedOptions)
+        self.dismissModalViewControllerAnimated(true)
     }
 
 }

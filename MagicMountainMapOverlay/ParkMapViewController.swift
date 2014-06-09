@@ -9,11 +9,12 @@
 import UIKit
 import MapKit
 
-class ParkMapViewController: UIViewController,MKMapViewDelegate
+class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDelegate
 {
 
     var selectedOptions = String[]()
     var park:Park
+    
     
     @IBOutlet var mapView : MKMapView
     
@@ -41,12 +42,14 @@ class ParkMapViewController: UIViewController,MKMapViewDelegate
         self.mapView.region = region
     }
 
-    override func viewDidAppear(animated: Bool)
+
+     override func viewWillAppear(animated: Bool)
     {
-        super.viewDidAppear(animated)
-        
-        
+        super.viewWillAppear(animated)
+        self.loadSelectedOptions()
     }
+    
+    
     // #pragma mark - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -56,6 +59,7 @@ class ParkMapViewController: UIViewController,MKMapViewDelegate
         // Pass the selected object to the new view controller.
         var viewController = segue?.destinationViewController as MapOptionsViewController
         viewController.selectedOptions = self.selectedOptions
+        viewController.delegate = self //set the MapOptions delegate to this view controller
     }
     
     //create the overlay
@@ -66,7 +70,9 @@ class ParkMapViewController: UIViewController,MKMapViewDelegate
     }
     
     
-    //
+    /*
+     *
+     */
     func loadSelectedOptions()
     {
         //remove all annotations and overlays to prevent duplications
@@ -99,13 +105,17 @@ class ParkMapViewController: UIViewController,MKMapViewDelegate
         return nil
     }
     
-    
-    @IBAction func unwindFromOptions(segue: UIStoryboardSegue)
+    //implement the delegate callback method
+    func didSelectOptions(options: String[])
     {
-        var viewController = segue.sourceViewController as MapOptionsViewController
-        viewController.selectedOptions = self.selectedOptions
+        self.selectedOptions = options
+        println("selected options \(self.selectedOptions)")
     }
+
     
+    /*
+     *
+     */
     @IBAction func onMapViewChanged(sender : UISegmentedControl)
     {
         switch sender.selectedSegmentIndex
