@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 
+
 enum AttractionType
 {
     case AttractionDefault
@@ -29,4 +30,6 @@ class AttractionAnnotation: NSObject, MKAnnotation
         self.coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
         self.type = .AttractionDefault
     }
+    
+
 }
