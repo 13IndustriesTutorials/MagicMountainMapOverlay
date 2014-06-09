@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE055D661945597400D49C7D /* AttractionAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE055D651945597400D49C7D /* AttractionAnnotation.swift */; };
 		CE065F98193FFE6B00BDE7E7 /* MapOptiionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE065F97193FFE6B00BDE7E7 /* MapOptiionsViewController.swift */; };
 		CE1447B41940480C00D3E175 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1447B31940480C00D3E175 /* MapKit.framework */; };
 		CE1447B619404B3D00D3E175 /* MagicMountain.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE1447B519404B3D00D3E175 /* MagicMountain.plist */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE055D651945597400D49C7D /* AttractionAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionAnnotation.swift; sourceTree = "<group>"; };
 		CE065F97193FFE6B00BDE7E7 /* MapOptiionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapOptiionsViewController.swift; sourceTree = "<group>"; };
 		CE1447B31940480C00D3E175 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CE1447B519404B3D00D3E175 /* MagicMountain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MagicMountain.plist; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				CE5184601940E5CD00053558 /* Park.swift */,
 				CE531B591942C15B008EC7B1 /* ParkMapOverlay.swift */,
 				CE531B5B1942C41E008EC7B1 /* ParkMapOverlayView.swift */,
+				CE055D651945597400D49C7D /* AttractionAnnotation.swift */,
 				CEEED2D1193FFB2E00795580 /* Images.xcassets */,
 				CEEED2C8193FFB2E00795580 /* Supporting Files */,
 			);
@@ -232,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE055D661945597400D49C7D /* AttractionAnnotation.swift in Sources */,
 				CEB88B8A193FFE0100187E64 /* ParkMapViewController.swift in Sources */,
 				CEEED2CB193FFB2E00795580 /* AppDelegate.swift in Sources */,
 				CE065F98193FFE6B00BDE7E7 /* MapOptiionsViewController.swift in Sources */,
