@@ -84,9 +84,11 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
         for (index, value)in enumerate(selectedOptions)
         {
             switch value
-            {
+                {
             case "Map Overlay":
                 self.addOverlay()
+            case "Attraction Pins":
+                self.addingAttrationsPins()
                 
             default:
                 break  //do nothing
@@ -107,11 +109,61 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
         return nil
     }
     
+    //delegate method to add annotation
+    func mapView(mapView: MKMapView!,
+        viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView!
+    {
+        var annotationView = AttractionAnnotationView(annotation: annotation, reuseIdentifier: "Attraction")
+        annotationView.canShowCallout = true
+        return annotationView
+    }
+    
     //implement the delegate callback method
     func didSelectOptions(options: String[])
     {
         self.selectedOptions = options
         println("selected options \(self.selectedOptions)")
+    }
+    
+    func addingAttrationsPins()
+    {
+        
+        //@"file:///Users/user/Library/Developer/CoreSimulator/Devices/CF6083CE-3851-4964-89EF-7B3F7E4A6E85/data/Containers/Bundle/Application/EF306FC1-9C6C-48A2-B4EC-943395330865/MagicMountainMapOverlay.app/MagicMountainAttractions.plist
+        var filePath = NSBundle.mainBundle().URLForResource("MagicMountainAttractions", withExtension: "plist")
+        var attractions = NSArray(contentsOfURL: filePath)
+        
+        for attraction:AnyObject in attractions
+        {
+            var location = attraction as NSDictionary
+            var point = CGPointFromString(location.valueForKey("location") as String)
+            println("point is \(point)")
+            var annotation = AttractionAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: point.x, longitude: point.y)
+            println("coordinate is \(annotation.coordinate)")
+            annotation.title = location.valueForKey("name")as? String
+            println("title is \(annotation.title)")
+            annotation.subtitle = location.valueForKey("subtitle") as? String
+            println("subtitle is \(annotation.subtitle)")
+            
+            var type = location.valueForKey("type") as String
+            println("type is \(type)")
+            
+            switch (type)
+                {
+            case "0":
+                annotation.type = .AttractionDefault
+            case "1":
+                annotation.type = .AttractionRide
+            case "2":
+                annotation.type = .AttractionFood
+            case "3":
+                annotation.type = .AttractionFirstAid
+            default:
+                annotation.type = .AttractionFirstAid
+            }
+            
+            self.mapView.addAnnotation(annotation)
+        }
     }
 
     

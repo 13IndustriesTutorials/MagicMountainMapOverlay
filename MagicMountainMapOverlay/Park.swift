@@ -27,22 +27,12 @@ class Park: NSObject
     init(filename:String)
     {
         //perform setup of object
-        //let thisBundle:NSBundle = NSBundle.mainBundle()
-
-        
-        //
-        //let fileURL = NSBundle.mainBundle().URLForResource("MagicMountain", withExtension: "plist")
-        
-        
-        //this method does not return a correct value for some undetermined reason
-        //let filePath:String = NSBundle.mainBundle().pathForResource("MagicMountain", ofType: "plist")
+        let fileURL = NSBundle.mainBundle().URLForResource("MagicMountain", withExtension: "plist")
+        let properties = NSDictionary(contentsOfURL: fileURL)
      
         //dictionary constructor name: value syntax
-        let properties:NSDictionary = NSDictionary(contentsOfFile: "//Users/user/Library/Developer/CoreSimulator/Devices/CF6083CE-3851-4964-89EF-7B3F7E4A6E85/data/Containers/Bundle/Application/EF306FC1-9C6C-48A2-B4EC-943395330865/MagicMountainMapOverlay.app/MagicMountain.plist")
-        
-        //let properties = NSDictionary(contentsOfURL: fileURL)
-        
-        
+//        let properties:NSDictionary = NSDictionary(contentsOfFile: "//Users/user/Library/Developer/CoreSimulator/Devices/CF6083CE-3851-4964-89EF-7B3F7E4A6E85/data/Containers/Bundle/Application/EF306FC1-9C6C-48A2-B4EC-943395330865/MagicMountainMapOverlay.app/MagicMountain.plist")
+
         //extract the mid coordinate from the dictionary and convert to a CGPoint, then create CLLocationCoordinate from point
         let midPoint = CGPointFromString(properties.valueForKey("midCoord") as String)
         self.midCoordinate = CLLocationCoordinate2DMake(midPoint.x, midPoint.y)

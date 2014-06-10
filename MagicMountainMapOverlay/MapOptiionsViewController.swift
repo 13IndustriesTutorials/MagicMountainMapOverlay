@@ -17,7 +17,7 @@ class MapOptionsViewController: UIViewController, UITableViewDelegate, UITableVi
 {
     //declare instance variables
     var selectedOptions = String[]()
-    var data = ["Park Boundary", "Map Overlay", "Attractiopn Pins", "Character Location", "Route" ]
+    var data = ["Park Boundary", "Map Overlay", "Attraction Pins", "Character Location", "Route" ]
     
     //declare the delegate for the options
     var delegate:MapOptionsDelegate?
