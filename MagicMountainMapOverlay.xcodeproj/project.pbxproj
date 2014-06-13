@@ -16,6 +16,10 @@
 		CE5184611940E5CD00053558 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5184601940E5CD00053558 /* Park.swift */; };
 		CE531B5A1942C15B008EC7B1 /* ParkMapOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE531B591942C15B008EC7B1 /* ParkMapOverlay.swift */; };
 		CE531B5C1942C41E008EC7B1 /* ParkMapOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE531B5B1942C41E008EC7B1 /* ParkMapOverlayView.swift */; };
+		CE940A9D194AB4B900468E81 /* EntranceToGoliathRoute.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE940A9C194AB4B900468E81 /* EntranceToGoliathRoute.plist */; };
+		CE940AA1194AB4DB00468E81 /* BatmanLocations.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE940A9E194AB4DB00468E81 /* BatmanLocations.plist */; };
+		CE940AA2194AB4DB00468E81 /* TazLocations.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE940A9F194AB4DB00468E81 /* TazLocations.plist */; };
+		CE940AA3194AB4DB00468E81 /* TweetyBirdLocations.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE940AA0194AB4DB00468E81 /* TweetyBirdLocations.plist */; };
 		CEB88B8A193FFE0100187E64 /* ParkMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB88B89193FFE0100187E64 /* ParkMapViewController.swift */; };
 		CEEED2CB193FFB2E00795580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEED2CA193FFB2E00795580 /* AppDelegate.swift */; };
 		CEEED2D0193FFB2E00795580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEED2CE193FFB2E00795580 /* Main.storyboard */; };
@@ -43,6 +47,10 @@
 		CE5184601940E5CD00053558 /* Park.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
 		CE531B591942C15B008EC7B1 /* ParkMapOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkMapOverlay.swift; sourceTree = "<group>"; };
 		CE531B5B1942C41E008EC7B1 /* ParkMapOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkMapOverlayView.swift; sourceTree = "<group>"; };
+		CE940A9C194AB4B900468E81 /* EntranceToGoliathRoute.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EntranceToGoliathRoute.plist; sourceTree = "<group>"; };
+		CE940A9E194AB4DB00468E81 /* BatmanLocations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BatmanLocations.plist; sourceTree = "<group>"; };
+		CE940A9F194AB4DB00468E81 /* TazLocations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TazLocations.plist; sourceTree = "<group>"; };
+		CE940AA0194AB4DB00468E81 /* TweetyBirdLocations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TweetyBirdLocations.plist; sourceTree = "<group>"; };
 		CEB88B89193FFE0100187E64 /* ParkMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkMapViewController.swift; sourceTree = "<group>"; };
 		CEEED2C5193FFB2E00795580 /* MagicMountainMapOverlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicMountainMapOverlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEED2C9193FFB2E00795580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,6 +121,10 @@
 		CEEED2C8193FFB2E00795580 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CE940A9C194AB4B900468E81 /* EntranceToGoliathRoute.plist */,
+				CE940A9E194AB4DB00468E81 /* BatmanLocations.plist */,
+				CE940A9F194AB4DB00468E81 /* TazLocations.plist */,
+				CE940AA0194AB4DB00468E81 /* TweetyBirdLocations.plist */,
 				CE1447B719404B4600D3E175 /* MagicMountainAttractions.plist */,
 				CE1447B519404B3D00D3E175 /* MagicMountain.plist */,
 				CEEED2C9193FFB2E00795580 /* Info.plist */,
@@ -217,10 +229,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE940AA1194AB4DB00468E81 /* BatmanLocations.plist in Resources */,
 				CE1447B819404B4600D3E175 /* MagicMountainAttractions.plist in Resources */,
+				CE940AA3194AB4DB00468E81 /* TweetyBirdLocations.plist in Resources */,
 				CEEED2D0193FFB2E00795580 /* Main.storyboard in Resources */,
 				CEEED2D2193FFB2E00795580 /* Images.xcassets in Resources */,
 				CE1447B619404B3D00D3E175 /* MagicMountain.plist in Resources */,
+				CE940AA2194AB4DB00468E81 /* TazLocations.plist in Resources */,
+				CE940A9D194AB4B900468E81 /* EntranceToGoliathRoute.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

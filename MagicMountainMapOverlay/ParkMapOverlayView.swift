@@ -19,7 +19,6 @@ class ParkMapOverlayView: MKOverlayRenderer
     init(overlay: MKOverlay!, overlayImage:UIImage)
     {
         self.overlayImage = overlayImage
-        
         super.init(overlay: overlay)
     }
     

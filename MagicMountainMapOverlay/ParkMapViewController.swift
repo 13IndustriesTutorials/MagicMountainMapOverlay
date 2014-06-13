@@ -89,7 +89,12 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
                 self.addOverlay()
             case "Attraction Pins":
                 self.addingAttrationsPins()
-                
+            case "Route":
+                self.addRoute()
+            case "test":
+                self.addRoute()
+            case "test":
+                self.addRoute()
             default:
                 break  //do nothing
             }
@@ -104,6 +109,12 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
             let magicMountainImage = UIImage(named: "overlay_park")
             let overlayView = ParkMapOverlayView(overlay: overlay, overlayImage: magicMountainImage)
             return overlayView
+        }
+        else if overlay.isKindOfClass(MKPolyline)
+        {
+            var lineview = MKPolylineRenderer(overlay: overlay)
+            lineview.strokeColor = UIColor.greenColor()
+            return lineview
         }
         
         return nil
@@ -136,17 +147,17 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
         {
             var location = attraction as NSDictionary
             var point = CGPointFromString(location.valueForKey("location") as String)
-            println("point is \(point)")
+            //println("point is \(point)")
             var annotation = AttractionAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: point.x, longitude: point.y)
-            println("coordinate is \(annotation.coordinate)")
+            //println("coordinate is \(annotation.coordinate)")
             annotation.title = location.valueForKey("name")as? String
-            println("title is \(annotation.title)")
+            //println("title is \(annotation.title)")
             annotation.subtitle = location.valueForKey("subtitle") as? String
-            println("subtitle is \(annotation.subtitle)")
+            //println("subtitle is \(annotation.subtitle)")
             
             var type = location.valueForKey("type") as String
-            println("type is \(type)")
+            //println("type is \(type)")
             
             switch (type)
                 {
@@ -166,6 +177,25 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
         }
     }
 
+    /*
+
+    */
+    func addRoute()
+    {
+        var path  = NSBundle.mainBundle().pathForResource("EntranceToGoliathRoute", ofType: "plist")
+        var points = NSArray(contentsOfFile: path);
+        var pointsCount = points.count;
+        var pointsToUse = CLLocationCoordinate2D[]();
+        
+        for (index, value:AnyObject)in enumerate(points)
+        {
+            var p = CGPointFromString(value as String);
+            pointsToUse += CLLocationCoordinate2DMake(p.x, p.y)
+        }
+        
+        var polyline = MKPolyline(coordinates: &pointsToUse, count: pointsToUse.count)
+        self.mapView.addOverlay(polyline)
+    }
     
     /*
      *
