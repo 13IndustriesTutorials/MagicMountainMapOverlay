@@ -91,9 +91,9 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
                 self.addingAttrationsPins()
             case "Route":
                 self.addRoute()
-            case "test":
-                self.addRoute()
-            case "test":
+            case "Park Boundary":
+                self.addBoundary()
+            case "Character Location":
                 self.addRoute()
             default:
                 break  //do nothing
@@ -115,6 +115,12 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
             var lineview = MKPolylineRenderer(overlay: overlay)
             lineview.strokeColor = UIColor.greenColor()
             return lineview
+        }
+        else if overlay.isKindOfClass(MKPolygon)
+        {
+            var polygonView = MKPolygonRenderer(overlay: overlay)
+            polygonView.strokeColor = UIColor.magentaColor()
+            return polygonView
         }
         
         return nil
@@ -196,6 +202,13 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
         var polyline = MKPolyline(coordinates: &pointsToUse, count: pointsToUse.count)
         self.mapView.addOverlay(polyline)
     }
+    
+    func addBoundary()
+    {
+        var boundary = MKPolygon(coordinates: &self.park.boundary, count: self.park.boundary.count)
+        self.mapView.addOverlay(boundary)
+    }
+    
     
     /*
      *
