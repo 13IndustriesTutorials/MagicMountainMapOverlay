@@ -94,7 +94,7 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
             case "Park Boundary":
                 self.addBoundary()
             case "Character Location":
-                self.addRoute()
+                self.addCharacterLocations()
             default:
                 break  //do nothing
             }
@@ -122,6 +122,12 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
             polygonView.strokeColor = UIColor.magentaColor()
             return polygonView
         }
+        else if overlay.isKindOfClass(MKCircle)
+        {
+            var characterView = MKCircleRenderer(overlay: overlay)
+            characterView.strokeColor = (overlay as Character).color
+            return characterView
+        }
         
         return nil
     }
@@ -142,6 +148,10 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
         println("selected options \(self.selectedOptions)")
     }
     
+    /*
+     * Create custom pin annotations for displaying the park attractions on the map. Each
+     * pin annotation has a callout view with attraction specific information
+     */
     func addingAttrationsPins()
     {
         
@@ -182,10 +192,42 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
             self.mapView.addAnnotation(annotation)
         }
     }
+    
+    func addCharacterLocations()
+    {
+        var characterLocation = self.extractPointsFromFile("BatmanLocations")
+        var index:Int = 0
+        var batmanLocation = CGPointFromString(characterLocation.objectAtIndex(index) as String)
+        var batman = Character(centerCoordinate: CLLocationCoordinate2DMake(batmanLocation.x, batmanLocation.y), radius: 50.0)
+        batman.color = UIColor.blueColor()
+        
+        characterLocation = self.extractPointsFromFile("TazLocations")
+        var tazLocation = CGPointFromString(characterLocation.objectAtIndex(index) as String)
+        var taz = Character(centerCoordinate: CLLocationCoordinate2DMake(tazLocation.x, tazLocation.y), radius: 30.0)
+        taz.color = UIColor.orangeColor()
+        
+        characterLocation = self.extractPointsFromFile("TweetyBirdLocations")
+        var tweetyLocation = CGPointFromString(characterLocation.objectAtIndex(index) as String)
+        var tweety = Character(centerCoordinate: CLLocationCoordinate2DMake(tweetyLocation.x, tweetyLocation.y), radius: 15.0)
+        tweety.color = UIColor.yellowColor()
+        
+        
+        self.mapView.addOverlay(batman)
+        self.mapView.addOverlay(taz)
+        self.mapView.addOverlay(tweety)
+        
+    }
+    
+    func extractPointsFromFile(fileName:String)->NSArray
+    {
+        var path  = NSBundle.mainBundle().pathForResource(fileName, ofType: "plist")
+        var points = NSArray(contentsOfFile: path);
+        return points
+    }
 
     /*
-
-    */
+     * Draw a route from the entrance of the park to the ride Goliath using MKPolyline
+     */
     func addRoute()
     {
         var path  = NSBundle.mainBundle().pathForResource("EntranceToGoliathRoute", ofType: "plist")
@@ -203,6 +245,10 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
         self.mapView.addOverlay(polyline)
     }
     
+    
+   /*
+    * Add a MKPolygon to map view to represent the boundary of the park
+    */
     func addBoundary()
     {
         var boundary = MKPolygon(coordinates: &self.park.boundary, count: self.park.boundary.count)
@@ -211,7 +257,8 @@ class ParkMapViewController: UIViewController, MKMapViewDelegate, MapOptionsDele
     
     
     /*
-     *
+     * Change the map view based on the selected segement
+     * @param UISegmentedControl sender
      */
     @IBAction func onMapViewChanged(sender : UISegmentedControl)
     {
